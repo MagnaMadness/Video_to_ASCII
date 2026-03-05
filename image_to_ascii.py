@@ -7,7 +7,7 @@ from ffpyplayer.player import MediaPlayer
 
 
 A_list = ["W", "@", "#", "&", "S", "%", "0" , "?","/", "*", "+", ";", ":", ",", ".", " "]
-#pixel//16
+##pixel//16
 
 # A_list = [
 #     '$', '@', 'B', '%', '8', '&', 'W', '#', '*', 'o',
@@ -16,7 +16,7 @@ A_list = ["W", "@", "#", "&", "S", "%", "0" , "?","/", "*", "+", ";", ":", ",", 
 #     'x', 'r', 'f', 't', '/', '|', '(', '1', '{',
 #     ']', '_', '~', '<', 'i', ';', ':','"','^', ',',"'", '.', ' '
 # ]
-#pixel//5
+##pixel//5
 
 B_list = A_list[::-1]
 def main(image, new_width=100, mode = 1):
@@ -46,45 +46,35 @@ def main(image, new_width=100, mode = 1):
   final = "\n".join(image_data[i:(i+new_width)] for i in range(0, num, new_width))
   print(f"\033[{new_height}A",end="")
   print(final)
-# path = r"C:\Personal Data\Anmol\11B\9I\Songs\TenSura OP 1.mp4"
-# path = "Bad Apple.avi"
-# # path = r"C:\Personal Data\Anmol\11B\9I\Songs\Raiden Shogun Baal AMV-GMV  [ Sia - Unstoppable] Genshin Impact.mp4"
-# player = MediaPlayer(path)
-# time.sleep(0.5)
-# vidcap = cv2.VideoCapture(path)
+path = "Bad Apple.avi"
+player = MediaPlayer(path)
+time.sleep(0.5)
+vidcap = cv2.VideoCapture(path)
 
-# # vidcap = cv2.VideoCapture(0)
-# fps = vidcap.get(cv2.CAP_PROP_FPS)
-# # print(fps)
-# # if fps>30:
-# #     factor = 1*round(fps/30)
-# # else:
-# #     factor = 1
-# success, imagecv = vidcap.read()
-# # frame = 1
-# print(success)
-# while success:
-#     # if frame%factor==0:
-#     if keyboard.is_pressed('p'):
-#         print('Keyboard Interrupt')
-#         break 
-#     tmp = time.time()
-#     imagecv = cv2.cvtColor(imagecv, cv2.COLOR_BGR2GRAY)
-#     image_pil = Image.fromarray(imagecv)
-#     main(image = image_pil, mode = 2, new_width = 600)
-#     # cv2.imshow('frame',imagecv)
-#     # if cv2.waitKey(1) & 0xFF == ord('q'):
-#     #     break
-#     success, imagecv = vidcap.read()
-#     # frame+=1
-#     slp = 1/(fps)+0.00034 - (time.time()-tmp)*1.075
-#     if slp<0:
-#         slp = 0
-#     time.sleep(slp)
-# vidcap.release()
-# path = input("Path: ")
-# path = r"C:\Users\anmol\Downloads\Indian_Institute_of_Space_Science_and_Technology_Logo.png"
-path =r"D:\Anmol-SSD\11B\9I-SSD\rickroll.gif"
+# vidcap = cv2.VideoCapture(0)  #to take ur webcam feed as the video
+fps = vidcap.get(cv2.CAP_PROP_FPS)
+# print(fps)
 
-imagepil = Image.open(path).convert("L")
-main(image = imagepil, mode = 2, new_width = 480)
+success, imagecv = vidcap.read()
+# frame = 1
+print(success)
+while success:
+    # if frame%factor==0:
+    if keyboard.is_pressed('p'):
+        print('Keyboard Interrupt')
+        break 
+    tmp = time.time()
+    imagecv = cv2.cvtColor(imagecv, cv2.COLOR_BGR2GRAY)
+    image_pil = Image.fromarray(imagecv)
+    main(image = image_pil, mode = 2, new_width = 600)
+    # cv2.imshow('frame',imagecv)
+    success, imagecv = vidcap.read()
+    # frame+=1
+    slp = 1/(fps)+0.00034 - (time.time()-tmp)*1.075
+    if slp<0:
+        slp = 0
+    time.sleep(slp)
+vidcap.release()
+
+
+
