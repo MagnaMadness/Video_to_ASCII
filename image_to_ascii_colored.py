@@ -56,10 +56,8 @@ def main(image, new_width=100, mode = 1):
     )
   print(f"\033[{new_height}A",end="")
   print(final)
-# path = r"D:\Anmol-SSD\11B\9I-SSD\Songs\'Revenge' - A Minecraft Parody of Usher's DJ Got Us Fallin' In Love (Music Video).mp4"
 # path = "Bad Apple.avi"
-path = r"C:\Users\anmol\Downloads\Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster).mp4"
-# path = r"D:\Anmol-SSD\11B\9I-SSD\Songs\Raiden Shogun Baal AMV-GMV  [ Sia - Unstoppable] Genshin Impact.mp4"
+path = r"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster).mp4"
 player = MediaPlayer(path)
 # time.sleep(0.5)
 # vidcap = cv2.VideoCapture(path)
@@ -99,7 +97,5 @@ while success:
     skadoosh+=1
     
 vidcap.release()
-# path = input("Path: ")
-# path = r"D:\Anmol-SSD\11B\9I-SSD\CryCreeper.jpg"
-# imagepil = Image.open(path)
-# main(image = imagepil, mode = 2)
+
+
