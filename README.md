@@ -1,4 +1,5 @@
 I created this project around 4 years ago (2022), and decided to upload it on github  cuz a friend suggested me to.
+
 There are 2 files in this repo for now.
 The first one image_to_ascii.py converts any video to ascii animation in grayscale.
 The second one, image_to_ascii_colored.py converts any videdo to ascii animation in color (tested in command prompt only).
