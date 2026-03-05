@@ -1,3 +1,4 @@
+I created this project around 4 years ago (2022), and decided to upload it on github  cuz a friend suggested me to.
 There are 2 files in this repo for now.
 The first one image_to_ascii.py converts any video to ascii animation in grayscale.
 The second one, image_to_ascii_colored.py converts any videdo to ascii animation in color (tested in command prompt only).
@@ -9,7 +10,7 @@ To use,
 2. In the line "main(image = image_pil, mode = 2, new_width = 600)" set the new_width to the resolution you want it to be displayed it (you can zoom out in command prompt to see the whole thing).
 3. You can press q to stop.
 
-I will add more explaination of the code if need be.
+I will add more explaination of the code if need be. 
 
 
 If you want to just convert an image to ascii, you can comment out everything after defining the path variable, and uncomment the last 2 lines.
